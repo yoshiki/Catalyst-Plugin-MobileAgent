@@ -1,0 +1,8 @@
+Revision history for Catalyst-Plugin-MobileAgent
+
+0.02    Thu Feb  9 12:58:48 JST 2006
+        Fixed bug in make test.
+
+0.01    Date/time
+        First version, released on an unsuspecting world.
+
