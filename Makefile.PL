@@ -1,18 +1,14 @@
 use strict;
 use warnings;
-use ExtUtils::MakeMaker;
+use inc::Module::Install;
 
-WriteMakefile(
-    NAME                => 'Catalyst::Plugin::MobileAgent',
-    AUTHOR              => 'Yoshiki Kurihara <kurihara@cpan.org>',
-    VERSION_FROM        => 'lib/Catalyst/Plugin/MobileAgent.pm',
-    ABSTRACT_FROM       => 'lib/Catalyst/Plugin/MobileAgent.pm',
-    PL_FILES            => {},
-    PREREQ_PM => {
-        'Test::More' => 0,
-        'HTTP::MobileAgent' => 0.22,
-        'Catalyst' => 5.30,
-    },
-    dist                => { COMPRESS => 'gzip -9f', SUFFIX => 'gz', },
-    clean               => { FILES => 'Catalyst-Plugin-MobileAgent-*' },
-);
+name                'Catalyst-Plugin-MobileAgent';
+author              'Yoshiki Kurihara <kurihara@cpan.org>';
+version_from        'lib/Catalyst/Plugin/MobileAgent.pm';
+
+requires 'Test::More' => 0;
+requires 'HTTP::MobileAgent' => 0.22;
+requires 'Catalyst' => 5.30;
+
+auto_install;
+WriteAll;

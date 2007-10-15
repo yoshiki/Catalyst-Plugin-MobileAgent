@@ -6,7 +6,7 @@ use NEXT;
 use Catalyst::Request;
 use HTTP::MobileAgent;
 
-our $VERSION = '0.02';
+our $VERSION = '0.03';
 
 {
     package Catalyst::Request;
@@ -16,7 +16,7 @@ our $VERSION = '0.02';
 sub prepare_headers {
     my $c = shift;
     $c->NEXT::prepare_headers(@_);
-    $c->req->mobile_agent(HTTP::MobileAgent->new($c->req->user_agent));
+    $c->req->mobile_agent( HTTP::MobileAgent->new( $c->req->headers ) );
 }
 
 =head1 NAME
@@ -33,13 +33,13 @@ Catalyst::Plugin::MobileAgent - HTTP mobile user agent string parser plugin for 
 
 =head1 DESCRIPTION
 
-This Plugin is HTTP mobile user agent string parser for Catalyst.
+Catalyst plugin parsed user agent string for mobile in Japan.
 
 =head1 EXTENDED METHODS
 
 =head2 prepare_headers
 
-We set mobile_agent using L<HTTP::MobileAgent>.
+Sets mobile_agent using L<HTTP::MobileAgent>.
 
 =head1 METHODS
 
@@ -53,11 +53,11 @@ L<HTTP::MobileAgent>, L<Catalyst::Request>
 
 =head1 AUTHOR
 
-Yoshiki Kurihara, C<< <kurihara@cpan.org> >>
+Yoshiki Kurihara, C<< <kurihara at cpan.org> >>
 
 =head1 COPYRIGHT & LICENSE
 
-Copyright 2006 Yoshiki Kurihara, all rights reserved.
+Copyright 2007 Yoshiki Kurihara, all rights reserved.
 
 This program is free software; you can redistribute it and/or modify it
 under the same terms as Perl itself.
