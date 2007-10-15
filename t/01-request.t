@@ -1,5 +1,3 @@
-use strict;
-
 package TestApp;
 
 use Catalyst qw( MobileAgent );
@@ -40,5 +38,5 @@ for my $Test ( @Tests ) {
         '/foo?class=' . $Test->{ class },
         'User-Agent' => $Test->{ user_agent },
     );
-    get( $request );
+    request( $request );
 }

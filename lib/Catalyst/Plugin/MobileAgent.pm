@@ -1,7 +1,7 @@
 package Catalyst::Plugin::MobileAgent;
 
-use warnings;
 use strict;
+use warnings;
 use NEXT;
 use Catalyst::Request;
 use HTTP::MobileAgent;
