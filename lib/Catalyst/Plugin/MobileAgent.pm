@@ -6,7 +6,7 @@ use NEXT;
 use Catalyst::Request;
 use HTTP::MobileAgent;
 
-our $VERSION = '0.03';
+our $VERSION = '0.04';
 
 {
     package Catalyst::Request;
@@ -55,12 +55,10 @@ L<HTTP::MobileAgent>, L<Catalyst::Request>
 
 Yoshiki Kurihara, C<< <kurihara at cpan.org> >>
 
-=head1 COPYRIGHT & LICENSE
+=head1 LICENSE
 
-Copyright 2007 Yoshiki Kurihara, all rights reserved.
-
-This program is free software; you can redistribute it and/or modify it
-under the same terms as Perl itself.
+This library is free software; you can redistribute it and/or modify
+it under the same terms as Perl itself.
 
 =cut
 
