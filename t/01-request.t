@@ -1,13 +1,12 @@
 package TestApp;
 
 use Catalyst qw( MobileAgent );
-use UNIVERSAL::isa;
 use Test::More 'no_plan';
 
 sub foo : Global {
     my ( $self, $c ) = @_;
     my $class = $c->req->params->{ class };
-    is UNIVERSAL::isa( $c->req->mobile_agent, $class ), 1, "$class check.";
+    isa_ok $c->req->mobile_agent, $class, "$class check.";
 }
 
 __PACKAGE__->setup();
