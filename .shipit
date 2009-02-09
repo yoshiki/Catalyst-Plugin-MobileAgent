@@ -1,2 +1,2 @@
-steps = DistTest, MakeDist, UploadCPAN
+steps = CheckChangeLog, DistTest, MakeDist, UploadCPAN
 CheckChangeLog.files = Changes
