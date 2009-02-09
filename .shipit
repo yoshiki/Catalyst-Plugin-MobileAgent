@@ -1,0 +1,2 @@
+steps = DistTest, MakeDist, UploadCPAN
+CheckChangeLog.files = Changes
