@@ -1,5 +1,8 @@
 Revision history for Catalyst-Plugin-MobileAgent
 
+0.041   Wed Feb 11 02:42:29 JST 2009
+        Fixed make test error for Catalyst::Request based on Moose.
+
 0.04    Mon Feb  9 19:11:15 JST 2009
         Fixed make test dependency error.
 

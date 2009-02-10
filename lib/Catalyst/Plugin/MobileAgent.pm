@@ -6,17 +6,18 @@ use NEXT;
 use Catalyst::Request;
 use HTTP::MobileAgent;
 
-our $VERSION = '0.04';
+our $VERSION = '0.041';
 
 {
     package Catalyst::Request;
-    __PACKAGE__->mk_accessors('mobile_agent');
-}
 
-sub prepare_headers {
-    my $c = shift;
-    $c->NEXT::prepare_headers(@_);
-    $c->req->mobile_agent( HTTP::MobileAgent->new( $c->req->headers ) );
+    sub mobile_agent {
+        my $self = shift;
+        unless ( $self->{ mobile_agent } ) {
+            $self->{ mobile_agent } = HTTP::MobileAgent->new( $self->headers );
+        }
+        return $self->{ mobile_agent };
+    }
 }
 
 =head1 NAME
